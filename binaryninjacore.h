@@ -1603,7 +1603,10 @@ extern "C"
 	BINARYNINJACOREAPI char* BNGetVersionString(void);
 	BINARYNINJACOREAPI uint32_t BNGetBuildId(void);
 
+	BINARYNINJACOREAPI char* BNGetSerialNumber(void);
+	BINARYNINJACOREAPI uint64_t BNGetLicenseExpirationTime(void);
 	BINARYNINJACOREAPI bool BNIsLicenseValidated(void);
+	BINARYNINJACOREAPI char* BNGetLicensedUserEmail(void);
 	BINARYNINJACOREAPI char* BNGetProduct(void);
 	BINARYNINJACOREAPI char* BNGetProductType(void);
 	BINARYNINJACOREAPI int BNGetLicenseCount(void);
@@ -2769,7 +2772,7 @@ extern "C"
 	BINARYNINJACOREAPI BNUpdateVersion* BNGetUpdateChannelVersions(const char* channel, size_t* count, char** errors);
 	BINARYNINJACOREAPI void BNFreeUpdateChannelVersionList(BNUpdateVersion* list, size_t count);
 
-	BINARYNINJACOREAPI bool BNAreUpdatesAvailable(const char* channel, char** errors);
+	BINARYNINJACOREAPI bool BNAreUpdatesAvailable(const char* channel, uint64_t* expireTime, uint64_t* serverTime, char** errors);
 
 	BINARYNINJACOREAPI BNUpdateResult BNUpdateToVersion(const char* channel, const char* version, char** errors,
 	                                                    bool (*progress)(void* ctxt, uint64_t progress, uint64_t total),
