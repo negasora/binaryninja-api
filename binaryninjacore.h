@@ -1204,7 +1204,7 @@ extern "C"
 		UpdateFailed = 0,
 		UpdateSuccess = 1,
 		AlreadyUpToDate = 2,
-		UpdatesAvailable = 3
+		UpdateAvailable = 3
 	};
 
 	struct BNUpdateChannel
