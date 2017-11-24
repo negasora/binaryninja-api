@@ -3177,6 +3177,8 @@ extern "C"
 	BINARYNINJACOREAPI BNMetadata* BNBinaryViewQueryMetadata(BNBinaryView* view, const char* key);
 	BINARYNINJACOREAPI void BNBinaryViewRemoveMetadata(BNBinaryView* view, const char* key);
 
+	BINARYNINJACOREAPI char* BNGetLinuxCADirectory();
+	BINARYNINJACOREAPI char* BNGetLinuxCABundlePath();
 #ifdef __cplusplus
 }
 #endif
